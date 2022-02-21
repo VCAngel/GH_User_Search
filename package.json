@@ -1,0 +1,42 @@
+{
+  "name": "gh_user_search",
+  "version": "1.0.0",
+  "description": "Web app for searching github users and show their stats",
+  "main": "App.jsx",
+  "scripts": {
+    "start": "webpack serve --hot --open",
+    "build": "webpack --config webpack.config.js --mode production",
+    "test": "react-script test",
+    "eject": "react-script eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VCAngel/GH_User_Search.git"
+  },
+  "author": "VCAngel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VCAngel/GH_User_Search/issues"
+  },
+  "homepage": "https://github.com/VCAngel/GH_User_Search#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.6.0",
+    "dart-sass": "^1.25.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}
