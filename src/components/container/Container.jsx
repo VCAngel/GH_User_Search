@@ -1,9 +1,12 @@
 import React from 'react';
+import SearchBar from '../searchBar/SearchBar';
+import ResultCard from '../resultCard/ResultCard';
 
 const Container = () => {
     return(
-        <main className="container">
-
+        <main className="main container">
+            <SearchBar></SearchBar>
+            <ResultCard></ResultCard>
         </main>
     );
 }

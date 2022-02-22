@@ -6,8 +6,11 @@ import Container from './components/container/Container';
 
 ReactDOM.render(
     <React.StrictMode>
-        <h1>Hello world!</h1>
-        <Navbar></Navbar>
+        <div>
+            <h1>GhUS</h1>
+            <Navbar></Navbar>
+            <Container></Container>
+        </div>
     </React.StrictMode>,
     document.getElementById('root')
 );

@@ -21,11 +21,11 @@ class Logo extends Component {
     generateSocials = () => {
         const socialEntries = Object.entries(socialsObj);
         let direction;
-        console.log(socialEntries);
+        // console.log(socialEntries);
         return socialEntries.map((socialEntry, index) => {
             let j = 0;
             index >= 2 ? direction = 'left' : direction = 'right';
-            return <Social mod={socialEntry[index, j]} link={socialEntry[index, ++j]} direction={direction}></Social>
+            return <Social key={socialEntry[index, j]} mod={socialEntry[index, j]} link={socialEntry[index, ++j]} direction={direction}></Social>
         })
     }
 
