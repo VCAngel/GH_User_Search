@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const Social = (({ mod, link, direction }) => {
-    const socialDir = `social__svg ${direction}`;
-    const socialMod = `social__svg--${mod}`
 
-    // dynamicImports(mod)
+const Social = (({ mod, link }) => {
+    const socialMod = `fa-brands fa-${mod}`
+    let node;
+
+    if (mod == 'vcangel') {
+        node = <span className='social__link--portfolio' aria-hidden="true">AV</span>
+    } else {
+        node = <span className={socialMod} aria-hidden="true"></span>
+    }
 
     return (
-        <a href={link} className={socialDir} target="_blank">
-            <div className={socialMod}>
-                {mod}
-            </div>
-        </a>
+        <li className="social">
+            <a href={link} target="_blank" className="social__link">
+                {node}
+            </a>
+        </li>
     );
 });
 

@@ -1,0 +1,77 @@
+html {
+    font-size: 62.5%;
+    //* Overrides REM sizing
+    //->16px * 62.5% = 10px
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    color: $primaryLight;
+    font-size: 1.6rem;
+    font-family: $font;
+    font-weight: $light;
+    height: 100%;
+    background-color: $backgroundDark;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 1rem 0;
+}
+
+h1 {
+    font-size: 6rem;
+    font-weight: $extraBold;
+}
+
+h2 {
+    font-size: 4.4rem;
+    font-weight: $bold;
+}
+
+h3 {
+    font-size: 3.6rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+p {
+    line-height: 2;
+    font-size: 1.8rem;
+}
+a {
+    color: $ghBlue;
+    text-decoration: none;
+}
+
+.container {
+    width: 100rem;
+    max-width: 85%;
+    margin: 0 auto;
+
+    @include mobile {
+        max-width: 80%;
+    }
+    @include desktop {
+        max-width: 70%;
+    }
+}
+
+#root {
+    height: 100%;
+}

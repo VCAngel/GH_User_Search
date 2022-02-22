@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
     entry: "./src/App.jsx",
     output: {
-        filename: "[name].[fullhash].bundle.js",
+        filename: "bundle.[fullhash].js",
         path: path.resolve(__dirname, "public"),
     },
     plugins: [
@@ -25,10 +25,10 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader", "sass-loader"],
+                use: ["style-loader", "css-loader"],
             },
             {
-                test: /\.s[ac]ss/i,
+                test: /\.s[ac]ss$/i,
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
             {
@@ -56,7 +56,7 @@ module.exports = {
                         }
                     }
                 }, "file-loader"],
-                type: "assets",
+                type: "asset/resource",
             }
         ]
     },
