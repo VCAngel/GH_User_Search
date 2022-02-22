@@ -8,8 +8,8 @@ import './scss/app.scss';
 ReactDOM.render(
     <React.StrictMode>
         <div>
-            <h1>GhUS</h1>
             <Navbar></Navbar>
+            <h1>GhUS</h1>
             <Container></Container>
         </div>
     </React.StrictMode>,

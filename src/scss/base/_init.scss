@@ -13,10 +13,12 @@ html {
 }
 
 body {
+    color: $primaryLight;
     font-size: 1.6rem;
     font-family: $font;
     font-weight: $light;
     height: 100%;
+    background-color: $backgroundDark;
 }
 
 img {
@@ -53,6 +55,7 @@ p {
     font-size: 1.8rem;
 }
 a {
+    color: $ghBlue;
     text-decoration: none;
 }
 

@@ -25,7 +25,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader", "sass-loader"],
+                use: ["style-loader", "css-loader"],
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -56,7 +56,7 @@ module.exports = {
                         }
                     }
                 }, "file-loader"],
-                type: "assets",
+                type: "asset/resource",
             }
         ]
     },
