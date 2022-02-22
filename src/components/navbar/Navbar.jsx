@@ -5,7 +5,6 @@ const socialsObj = {
     'vcangel': '#',
     'linkedin': '#',
     'github': 'https://github.com/VCAngel',
-    'platzi': 'https://platzi.com/p/VCAngel/',
     'twitter': 'https://twitter.com/Dedoloco321',
 };
 
@@ -21,11 +20,9 @@ class Navbar extends Component {
 
     generateSocials = () => {
         const socialEntries = Object.entries(socialsObj);
-        let direction;
         // console.log(socialEntries);
         return socialEntries.map((socialEntry, index) => {
             let j = 0;
-            index >= 2 ? direction = 'left' : direction = 'right';
             return <Social key={socialEntry[index, j]} mod={socialEntry[index, j]} link={socialEntry[index, ++j]}></Social>
         })
     }

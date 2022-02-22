@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 
 const Social = (({ mod, link }) => {
-    const socialMod = `social__link--${mod}`
+    const socialMod = `fa-brands fa-${mod}`
     let node;
 
-    if(mod == 'vcangel'){
-        node = <p>vcangel</p>;
-    }else{
-        node = <p>fontawesome</p>
+    if (mod == 'vcangel') {
+        node = <span className='social__link--portfolio' aria-hidden="true">AV</span>
+    } else {
+        node = <span className={socialMod} aria-hidden="true"></span>
     }
 
     return (
         <li className="social">
             <a href={link} target="_blank" className="social__link">
-                <span className={socialMod}>
-                    {node}
-                </span>
+                {node}
             </a>
         </li>
     );
