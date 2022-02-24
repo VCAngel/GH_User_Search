@@ -40,15 +40,7 @@
                 list-style-type: none;
 
                 @include tablet {
-                    width: 90%;
-                }
-
-                @include desktop {
-                    width: 75%;
-                }
-
-                @include lg-desktop {
-                    width: 50%;
+                    width: fit-content
                 }
             }
         }
@@ -58,17 +50,26 @@
 .social {
     cursor: pointer;
     position: relative;
+    margin: 0;
 
     &__link--portfolio {
         font-size: 2.6rem;
         font-weight: $extraBold;
         font-family: $logo;
-        color: #222;
+        color: #333;
     }
 
     .fa-brands {
         font-size: 2.6rem;
-        color: #222;
+        color: #333;
+    }
+
+    @include tablet{
+        margin:0 1.4rem;
+    }
+
+    @include desktop{
+        margin: 0 2rem;
     }
 }
 
@@ -80,7 +81,7 @@ li.social::before {
     font-size: 2.6rem;
     height: 0;
     overflow: hidden;
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease-out;
 }
 
 // -> Link animations
@@ -88,22 +89,18 @@ li.social::before {
     content: "AV";
     font-family: $logo;
     color: $primaryLight;
-    border-bottom: 0.2rem solid $primaryLight;
 }
 .social:nth-child(2)::before {
-    content: "\f08c";
-    color: $linkedIn;
-    border-bottom: 0.2rem solid $linkedIn;
+    content: "\f09b";
+    color: $primaryLight;
 }
 .social:nth-child(3)::before {
-    content: "\f09b";
-    color: $ghGreen;
-    border-bottom: 0.2rem solid $ghGreen;
+    content: "\f08c";
+    color: $linkedIn;
 }
 .social:nth-child(4)::before {
     content: "\f099";
     color: $twitter;
-    border-bottom: 0.2rem solid $twitter;
 }
 
 .social:hover::before {
