@@ -1,0 +1,51 @@
+.profileSearch {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 0.6rem 0;
+    padding: 0 1rem;
+    gap: 1rem;
+
+    &__img {
+        max-width: 5rem;
+        min-width: 5rem;
+        height: 100%;
+
+        img {
+            border: 2px solid $primaryLight;
+            border-radius: 50%;
+        }
+    }
+
+    &__tag {
+        color: $ghBlue;
+        font-weight: $bold;
+        width: 80%;
+        
+        p{
+            display: inline-block;
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+
+            span{
+                color: $primaryLight;
+                font-weight: $regular;
+            }
+        }
+    }
+}
+
+//-> Afterline!
+.profileSearch::after {
+    content: "";
+    background-color: $secondaryDark;
+    width: 90%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

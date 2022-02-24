@@ -13,9 +13,8 @@ const SearchBar = () => {
         <div className='main__searchBar'>
             <div className="main__searchBar--input">
                 <input type='text' placeholder='Search User' id='userInput' onChange={updateUserProfile} ref={inputRef} />
-                <button type='button'>
+                <button type='button' className='fa-solid fa-magnifying-glass'>
                     {/*TODO Add search icon*/}
-                    Search
                 </button>
             </div>
 
@@ -28,5 +27,6 @@ const SearchBar = () => {
     );
 }
 
+//TODO search logic
 
 export default SearchBar;
