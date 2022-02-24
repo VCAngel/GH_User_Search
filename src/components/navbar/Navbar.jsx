@@ -3,8 +3,8 @@ import Social from './Social';
 
 const socialsObj = {
     'vcangel': '#',
-    'linkedin': '#',
     'github': 'https://github.com/VCAngel',
+    'linkedin': '#',
     'twitter': 'https://twitter.com/Dedoloco321',
 };
 
@@ -32,7 +32,9 @@ class Navbar extends Component {
             <header className='header'>
                 <div className='header__container'>
                     <nav className="navbar">
-                        <h4 className="navbar__title">Github User Search</h4>
+                        <h4 className="navbar__title">
+                            <span className="fa-brands fa-github"></span> Github user search
+                        </h4>
                         <ul className="navbar__item">
                             {this.generateSocials()}
                         </ul>

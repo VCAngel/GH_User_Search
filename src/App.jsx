@@ -7,11 +7,8 @@ import './scss/app.scss';
 
 ReactDOM.render(
     <React.StrictMode>
-        <div>
-            <Navbar></Navbar>
-            <h1>GhUS</h1>
-            <Container></Container>
-        </div>
+        <Navbar></Navbar>
+        <Container></Container>
     </React.StrictMode>,
     document.getElementById('root')
 );

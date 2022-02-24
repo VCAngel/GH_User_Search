@@ -25,12 +25,12 @@ class UserProfile extends Component {
 //* Component searchbar variant
 const SearchProfile = ({input}) => { 
     return (
-        <div className='profileSearch'>
+        <div href="#" id="profileSearch" className='profileSearch' >
             <div className='profileSearch__img'>
-                <img src="" alt="" />
+                <img src="https://avatars.githubusercontent.com/u/42756104?v=4" alt="" />
             </div>
             <div className='profileSearch__tag'>
-                <a href="#">@{input}</a>
+                <p>@{input}<span> | {input}</span></p>
             </div>
         </div>
     );
