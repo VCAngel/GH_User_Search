@@ -3,7 +3,7 @@ import SearchBar from '../searchBar/SearchBar';
 import ResultCard from '../resultCard/ResultCard';
 
 const Container = () => {
-    return(
+    return (
         <main className="main container">
             <SearchBar></SearchBar>
             <ResultCard></ResultCard>
