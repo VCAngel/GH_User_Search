@@ -3,19 +3,24 @@ import React, { Component } from 'react';
 class UserProfile extends Component {
     constructor(props) {
         super(props);
-        this.setState = {
-            matchesUser: false,
-        }
     }
 
     render() {
         if (this.props?.type == 'search') {
             return (
-                <SearchProfile input={this.props?.input}></SearchProfile>
+                <SearchProfile></SearchProfile>
             )
         } else if (this.props?.type == 'result') {
             return (
-                <ResultProfile></ResultProfile>
+                <ResultProfile
+                    login={this?.props?.userData.login}
+                    name={this?.props?.userData.name}
+                    avatar_url={this?.props?.userData.avatar_url}
+                    html_url={this?.props?.userData.html_url}
+                    followers={this?.props?.userData.followers}
+                    following={this?.props?.userData.following}
+                    bio={this?.props?.userData.bio}
+                />
             )
         } else
             return <h1>Bad prop</h1>
@@ -23,7 +28,8 @@ class UserProfile extends Component {
 }
 
 //* Component searchbar variant
-const SearchProfile = ({input}) => { 
+//TODO Implement component with dynamic filtering
+const SearchProfile = (props) => {
     return (
         <div href="#" id="profileSearch" className='profileSearch' >
             <div className='profileSearch__img'>
@@ -37,15 +43,22 @@ const SearchProfile = ({input}) => {
 }
 
 //* Component resultcard variant
-const ResultProfile = () => {
+const ResultProfile = ({ login, name, avatar_url, html_url, followers, following, bio }) => {
     return (
         <div className='profileResult'>
             <div className='profileResult__img'>
-                <img src="" alt="" />
+                <img src={avatar_url} alt="avatar" />
             </div>
             <div className='profileResult__tag'>
-                <h3>User Name</h3>
-                <a href="#">@Test</a>
+                <h3>{name}</h3>
+                <a href={html_url}>@{login}</a>
+            </div>
+            <div className='profileResult__ghData'>
+                <div className='profileResult__ghData--follow'>
+                    <p>Followers: <span>{followers}</span></p>
+                    <p>Following: <span>{following}</span></p>
+                </div>
+                <p className='profileResult__ghData--bio'>{bio}</p>
             </div>
         </div>
     );

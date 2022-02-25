@@ -10,12 +10,15 @@ class SearchBar extends Component {
             query: '',
             userData: {
                 login: '',
+                name: '',
                 avatar_url: '',
                 html_url: '',
                 followers: 0,
                 following: 0,
                 location: '',
                 company: '',
+                blog: '',
+                twitter_username: '',
                 bio: '',
             },
         }
@@ -65,19 +68,21 @@ class SearchBar extends Component {
                     .get(item.url)
                     .then(res => userAPI = res.data)
                     .catch(err => console.error(err))
-                    .finally(() => {
-                        let { login, avatar_url, html_url, followers, following, location, company, bio } = userAPI;
+                    .then(() => {
+                        let { login, name, avatar_url, html_url, followers, following, location, blog, twitter_username, company, bio } = userAPI;
 
                         this.setState({
                             userData: {
-                                login, avatar_url, html_url, followers, following, location, company, bio
+                                login, name, avatar_url, html_url, followers, following, location, blog, twitter_username, company, bio
                             }
                         })
                     })
+                    .finally(() => {
+                        //->Bubble up state to Container.jsx
+                        this.props.userDataHandler(this.state.userData);
+                    })
             }
-
         })
-
     }
 
     render() {
@@ -89,12 +94,10 @@ class SearchBar extends Component {
                     </button>
                 </div>
 
-                <div className="main__searchBar--output">
-                    {/* TODO Add user profile; search variation */}
-                    {/* TODO Add dynamic searches logic */}
-
-                    <UserProfile type='search' input=""></UserProfile>
-                </div>
+                {/* <div className="main__searchBar--output"> */}
+                {/* TODO Add dynamic searches filtering */}
+                {/* <UserProfile type='search' userData={this?.state?.userData}></UserProfile> */}
+                {/* </div> */}
             </div>
         );
     }

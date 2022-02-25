@@ -7,13 +7,12 @@ class ResultCard extends Component {
     }
 
     render() {
+        console.log(this.props.userData.login);
         return (
             <div className="main__resultCard">
-                <UserProfile type='result'></UserProfile>
-                <div className="resultCard__ghData">
-                    {/* TODO Fetch data for each user, [repos, followers, following] */}
-                </div>
+                <UserProfile type='result' userData={this.props.userData}/>
                 <div className="resultCard__personalData">
+
                     {/* TODO Fetch data for each user, [location, company, website, twitter] */}
                 </div>
                 <div className="resultCard__contributions">
