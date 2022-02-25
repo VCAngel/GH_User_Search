@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from '../searchBar/SearchBar';
-import ResultCard from '../resultCard/ResultCard';
+import UserProfile from '../user/UserProfile';
 
 class Container extends Component {
     constructor(props) {
@@ -17,9 +17,15 @@ class Container extends Component {
         console.log(this.state.userData);
         return (
             <main className="main container" >
+                {/* !Search Bar */}
                 <SearchBar userDataHandler={this.userDataHandler}></SearchBar>
-                <ResultCard userData={this.state.userData}></ResultCard>
-            </main>
+
+                {/* !Result Card */}
+                <div className="main__resultCard">
+                    <UserProfile type='result' userData={this.state.userData} />
+                </div>
+
+            </main >
         );
     }
 }
