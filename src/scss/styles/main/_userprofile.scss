@@ -7,23 +7,12 @@
     padding: 0 1rem;
     gap: 1rem;
 
-    &__img {
-        max-width: 5rem;
-        min-width: 5rem;
-        height: 100%;
-
-        img {
-            border: 2px solid $primaryLight;
-            border-radius: 50%;
-        }
-    }
-
     &__tag {
         color: $ghBlue;
         font-weight: $bold;
         width: 80%;
-        
-        p{
+
+        p {
             display: inline-block;
             margin: 0;
             overflow: hidden;
@@ -31,7 +20,7 @@
             white-space: nowrap;
             width: 100%;
 
-            span{
+            span {
                 color: $primaryLight;
                 font-weight: $regular;
             }
@@ -51,4 +40,64 @@
     transform: translateX(-50%);
 }
 
+.profileSearch:last-of-type::after {
+    content: "";
+}
+
 //* Result card!
+.profileResult {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__ghUser {
+        @include gridDisplay(3, 1rem);
+
+        div.rounded-container--result {
+            margin: 0 auto;
+        }
+
+        &--info {
+            width: 100%;
+            grid-column: 2/4;
+            margin: auto 0;
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 1ch;
+
+                div#follow {
+                    gap: 1ch;
+
+                    p#followers,
+                    p#following {
+                        margin: 0;
+
+                        span {
+                            font-weight: $bold;
+                        }
+                    }
+
+                    &::before {
+                        content: "│";
+                    }
+                }
+            }
+        }
+    }
+
+    &__ghData {
+        @include gridDisplay(3, 1rem);
+
+        &--info {
+        }
+
+        &--bio {
+            grid-column: 2/4;
+        }
+    }
+}

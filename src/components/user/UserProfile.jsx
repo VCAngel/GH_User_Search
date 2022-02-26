@@ -32,8 +32,8 @@ class UserProfile extends Component {
 const SearchProfile = (props) => {
     return (
         <div href="#" id="profileSearch" className='profileSearch' >
-            <div className='profileSearch__img'>
-                <img src="https://avatars.githubusercontent.com/u/42756104?v=4" alt="" />
+            <div className='rounded-container--search'>
+                <img className='rounded-img' src="https://avatars.githubusercontent.com/u/42756104?v=4" alt="" />
             </div>
             <div className='profileSearch__tag'>
                 <p>@{input}<span> | {input}</span></p>
@@ -43,23 +43,31 @@ const SearchProfile = (props) => {
 }
 
 //* Component resultcard variant
-const ResultProfile = ({ login, name, avatar_url, html_url, followers, following, bio }) => {
+const ResultProfile = ({ login, name, avatar_url, html_url, followers, following, location, company, blog, twitter_username, bio }) => {
     return (
         <div className='profileResult'>
-            <div className='profileResult__img'>
-                <img src={avatar_url} alt="avatar" />
-            </div>
-            <div className='profileResult__tag'>
-                <h3>{name}</h3>
-                <a href={html_url}>@{login}</a>
+            <div className='profileResult__ghUser'>
+                <div className='rounded-container--result'>
+                    <img className='rounded-img' src={avatar_url} alt="avatar" />
+                </div>
+                <div className='profileResult__ghUser--info'>
+                    <h3>{name}</h3>
+                    <div>
+                        <a href={html_url}>@{login}</a>
+                        <div id='follow'>
+                            <p id='followers'><span>{followers}</span> followers</p>
+                            <span>•</span>
+                            <p id='following'><span>{following}</span> following</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className='profileResult__ghData'>
-                <div className='profileResult__ghData--follow'>
-                    <p>Followers: <span>{followers}</span></p>
-                    <p>Following: <span>{following}</span></p>
+                <div className='profileResult__ghData--info'>
                 </div>
                 <p className='profileResult__ghData--bio'>{bio}</p>
             </div>
+
         </div>
     );
 }
