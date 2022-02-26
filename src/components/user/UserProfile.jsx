@@ -49,10 +49,10 @@ const SearchProfile = (props) => {
 //* Component resultcard variant
 const ResultProfile = ({ login, name, avatar_url, html_url, followers, following, location, company, blog, twitter_username, bio }) => {
     location = location ?? 'Milky way';
-    company = company ?? 'Unavailable';
-    twitter_username = twitter_username ?? 'Unavailable'; 
-    blog == '' ? blog = 'Unavailable' : blog = blog; 
-    bio = bio ?? 'No bio... :c'
+    company = company ?? '-';
+    twitter_username = twitter_username ?? '-'; 
+    blog == '' ? blog = '-' : blog = blog; 
+    bio = bio ?? 'No bio... :C'
 
     return (
         <div className='profileResult'>
