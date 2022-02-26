@@ -19,6 +19,10 @@ class UserProfile extends Component {
                     html_url={this?.props?.userData.html_url}
                     followers={this?.props?.userData.followers}
                     following={this?.props?.userData.following}
+                    location={this?.props?.userData.location}
+                    company={this?.props?.userData.company}
+                    blog={this?.props?.userData.blog}
+                    twitter_username={this?.props?.userData.twitter_username}
                     bio={this?.props?.userData.bio}
                 />
             )
@@ -44,6 +48,12 @@ const SearchProfile = (props) => {
 
 //* Component resultcard variant
 const ResultProfile = ({ login, name, avatar_url, html_url, followers, following, location, company, blog, twitter_username, bio }) => {
+    location = location ?? 'Milky way';
+    company = company ?? 'Unavailable';
+    twitter_username = twitter_username ?? 'Unavailable'; 
+    blog == '' ? blog = 'Unavailable' : blog = blog; 
+    bio = bio ?? 'No bio... :c'
+
     return (
         <div className='profileResult'>
             <div className='profileResult__ghUser'>
@@ -64,6 +74,10 @@ const ResultProfile = ({ login, name, avatar_url, html_url, followers, following
             </div>
             <div className='profileResult__ghData'>
                 <div className='profileResult__ghData--info'>
+                    <p><span className="fa-solid fa-location-dot"></span>{location}</p>
+                    <p><span className="fa-solid fa-building"></span>{company}</p>
+                    <p><span className="fa-solid fa-link"></span>{blog}</p>
+                    <p><span className="fa-solid fa-twitter"></span>{twitter_username}</p>
                 </div>
                 <p className='profileResult__ghData--bio'>{bio}</p>
             </div>
