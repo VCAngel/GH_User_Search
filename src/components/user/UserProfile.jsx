@@ -63,7 +63,7 @@ const ResultProfile = ({ login, name, avatar_url, html_url, followers, following
                 <div className='profileResult__ghUser--info'>
                     <h3>{name}</h3>
                     <div>
-                        <a href={html_url}>@{login}</a>
+                        <a href={html_url} target="_blank">@{login}</a>
                         <div id='follow'>
                             <p id='followers'><span>{followers}</span> followers</p>
                             <span>•</span>

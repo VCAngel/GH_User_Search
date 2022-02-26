@@ -22,11 +22,18 @@ class SearchBar extends Component {
                 bio: '',
             },
         }
-        this.node = React.createRef();
+        this.input = React.createRef();
+        this.btn = React.createRef();
     }
 
     componentDidMount() {
         document.addEventListener('mousedown', this.onChange);
+        this.input.current.addEventListener('keydown', (evt) => {
+            if(evt.keyCode === 13){
+                evt.preventDefault();
+                this.btn.current.click();
+            }
+        });
     }
 
     componentWillUnmount() {
@@ -34,7 +41,7 @@ class SearchBar extends Component {
     }
 
     onChange = (evt) => {
-        if (this.node.current.contains(evt.target))
+        if (this.input.current.contains(evt.target))
             return
 
         this.setState({ user: [] })
@@ -89,8 +96,8 @@ class SearchBar extends Component {
         return (
             <div className='main__searchBar'>
                 <div className="main__searchBar--input">
-                    <input type='text' placeholder='Search User' id='userInput' onChange={this.onUserChange} onClick={this.onChange} ref={this.node} />
-                    <button type='button' className='fa-solid fa-magnifying-glass' onClick={this.apiQuery}>
+                    <input type='text' placeholder='Search User' id='userInput' onChange={this.onUserChange} onClick={this.onChange} ref={this.input} />
+                    <button type='button' className='fa-solid fa-magnifying-glass' onClick={this.apiQuery} ref={this.btn}>
                     </button>
                 </div>
 
