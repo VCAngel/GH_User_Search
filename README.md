@@ -1,2 +1,5 @@
 # GH_User_Search
-Web app for searching github users and show their stats
+Webpage built with React. Search for github users and checkout out their info..
+
+## Try it out!
+[Github User Search](https://ghus.netlify.app/)
